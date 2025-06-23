@@ -30,7 +30,7 @@ clusterGroup:
       name: sample-app
       namespace: sample-app
       project: sample-app
-      repoURL: https://github.com/jstrahle/sample-app.git
+      repoURL: https://github.com/jstrahle/sample-app
       path: charts
       targetRevision: main
   imperative:
