@@ -8,8 +8,10 @@ clusterGroup:
   isHubCluster: false
   namespaces:
     - hello-world
+    - sample-app
   projects:
     - hello-world
+    - sample-app
   subscriptions:
     arcade:
       channel: alpha
@@ -24,6 +26,13 @@ clusterGroup:
       namespace: hello-world
       project: hello-world
       path: charts/all/hello-world
+    sample-app:
+      name: sample-app
+      namespace: sample-app
+      project: sample-app
+      repoURL: https://github.com/jstrahle/sample-app.git
+      path: charts
+      targetRevision: main
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule
