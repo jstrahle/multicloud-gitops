@@ -30,8 +30,8 @@ clusterGroup:
       name: sample-app
       namespace: sample-app
       project: sample-app
-      repoURL: https://github.com/jstrahle/sample-app
-      path: charts
+      repoURL: https://github.com/jstrahle/sample-app.git
+      path: charts/sample-app
       targetRevision: main
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
