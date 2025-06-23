@@ -14,10 +14,12 @@ clusterGroup:
     - hello-world
   subscriptions:
     arcade:
+      channel: alpha
+      installPlanApproval: Automatic
       name: marketplace-games-operator
-      namespace: openshift-operators
-      channel: alpha-1.0.0
-      #csv: advanced-cluster-management.v2.6.1
+      source: certified-operators
+      sourceNamespace: openshift-marketplace
+      startingCSV: marketplace-games-operator.v1.0.0
   applications:
     hello-world:
       name: hello-world
