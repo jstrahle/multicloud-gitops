@@ -14,7 +14,7 @@ clusterGroup:
     - hello-world
   subscriptions:
     arcade:
-      name: arcade-operator
+      name: marketplace-games-operator
       namespace: openshift-operators
       channel: alpha-1.0.0
       #csv: advanced-cluster-management.v2.6.1
