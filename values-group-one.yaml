@@ -12,6 +12,12 @@ clusterGroup:
   # subscriptions:
   projects:
     - hello-world
+  subscriptions:
+    arcade:
+      name: arcade-operator
+      namespace: openshift-operators
+      channel: alpha-1.0.0
+      #csv: advanced-cluster-management.v2.6.1
   applications:
     hello-world:
       name: hello-world
