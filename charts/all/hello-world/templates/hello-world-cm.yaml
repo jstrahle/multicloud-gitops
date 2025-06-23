@@ -13,7 +13,7 @@ data:
           <title>Hello World</title>
         </head>
           <body>
-            <h1>Hello World demo by Jarkko - another edit</h1>
+            <h1>Hello World demo by Jarkko - new edit at 13:13</h1>
             <br/>
             <h2>
             Hub Cluster domain is '{{ .Values.global.hubClusterDomain }}' <br>
