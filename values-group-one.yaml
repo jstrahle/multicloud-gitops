@@ -8,8 +8,6 @@ clusterGroup:
   isHubCluster: false
   namespaces:
     - hello-world
-  # The only subscription on spokes is gitops which gets managed by ACM
-  # subscriptions:
   projects:
     - hello-world
   subscriptions:
