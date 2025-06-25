@@ -15,12 +15,10 @@ clusterGroup:
       channel: alpha
       installPlanApproval: Automatic
       namespace: ack-system
-      approved: true
       name: ack-s3-controller
       source: community-operators
       sourceNamespace: openshift-marketplace
-      startingCSV: ack-s3-controller.v1.0.32
-      version: 1.0.32
+      startingCSV: ack-s3-controller.v1.0.33
   projects:
     - hub
     - hello-world
