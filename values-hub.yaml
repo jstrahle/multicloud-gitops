@@ -3,6 +3,7 @@ clusterGroup:
   isHubCluster: true
   namespaces:
     - open-cluster-management
+    - ack-system
     - hello-world
   subscriptions:
     acm:
@@ -13,6 +14,7 @@ clusterGroup:
     s3:
       channel: alpha
       installPlanApproval: Automatic
+      namespace: ack-system
       approved: true
       name: ack-s3-controller
       source: community-operators
