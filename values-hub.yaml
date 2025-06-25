@@ -51,6 +51,7 @@ clusterGroup:
       project: hello-world
       path: charts/all/hello-world
     general-configs:
+      project: hub
       name: general-configs
       kustomize: true
       path: charts/hub/general-configs/base
