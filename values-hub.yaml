@@ -17,7 +17,7 @@ clusterGroup:
       name: ack-s3-controller
       source: community-operators
       sourceNamespace: openshift-marketplace
-      currentCSV: ack-s3-controller.v1.0.32
+      csv: ack-s3-controller.v1.0.32
   projects:
     - hub
     - hello-world
