@@ -12,12 +12,12 @@ clusterGroup:
       #csv: advanced-cluster-management.v2.6.1
     s3:
       channel: alpha
-      installPlanApproval: Manual
+      installPlanApproval: Automatic
       approved: true
       name: ack-s3-controller
       source: community-operators
       sourceNamespace: openshift-marketplace
-      startingCSV: ack-s3-controller.v1.0.33
+      CSV: ack-s3-controller.v1.0.32
   projects:
     - hub
     - hello-world
