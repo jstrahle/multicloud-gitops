@@ -13,6 +13,7 @@ clusterGroup:
     s3:
       channel: alpha
       installPlanApproval: Manual
+      approved: true
       name: ack-s3-controller
       source: community-operators
       sourceNamespace: openshift-marketplace
