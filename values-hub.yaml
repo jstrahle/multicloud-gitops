@@ -4,7 +4,6 @@ clusterGroup:
   namespaces:
     - open-cluster-management
     - ack-system
-    - hello-world
   subscriptions:
     acm:
       name: advanced-cluster-management
