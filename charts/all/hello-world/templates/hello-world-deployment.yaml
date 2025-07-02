@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     application: hello-world
+    mytag: revision-1
   name: hello-world
 spec:
   replicas: 1

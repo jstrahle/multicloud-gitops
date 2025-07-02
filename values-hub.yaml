@@ -3,20 +3,23 @@ clusterGroup:
   isHubCluster: true
   namespaces:
     - open-cluster-management
-    - vault
-    - golang-external-secrets
-    - config-demo
-    - hello-world
+    - ack-system
   subscriptions:
     acm:
       name: advanced-cluster-management
       namespace: open-cluster-management
       channel: release-2.11
       #csv: advanced-cluster-management.v2.6.1
+    s3:
+      channel: alpha
+      installPlanApproval: Automatic
+      namespace: ack-system
+      name: ack-s3-controller
+      source: community-operators
+      sourceNamespace: openshift-marketplace
+      startingCSV: ack-s3-controller.v1.0.33
   projects:
     - hub
-    - config-demo
-    - hello-world
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   sharedValueFiles:
@@ -49,42 +52,17 @@ clusterGroup:
           kind: ManagedClusterInfo
           jsonPointers:
             - /spec/loggingCA
-    vault:
-      name: vault
-      namespace: vault
+    general-configs:
       project: hub
-      chart: hashicorp-vault
-      chartVersion: 0.1.*
-    golang-external-secrets:
-      name: golang-external-secrets
-      namespace: golang-external-secrets
-      project: hub
-      chart: golang-external-secrets
-      chartVersion: 0.1.*
-    config-demo:
-      name: config-demo
-      namespace: config-demo
-      project: config-demo
-      path: charts/all/config-demo
-    hello-world:
-      name: hello-world
-      namespace: hello-world
-      project: hello-world
-      path: charts/all/hello-world
-  imperative:
+      name: general-configs
+      kustomize: true
+      path: charts/hub/general-configs/base
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule
     # Total timeout of all jobs is 1h: imperative.activeDeadlineSeconds
     # imagePullPolicy is set to always: imperative.imagePullPolicy
     # For additional overrides that apply to the jobs, please refer to
     # https://hybrid-cloud-patterns.io/imperative-actions/#additional-job-customizations
-    jobs:
-      - name: hello-world
-        # ansible playbook to be run
-        playbook: rhvp.cluster_utils.hello_world
-        # per playbook timeout in seconds
-        timeout: 234
-        # verbosity: "-v"
   managedClusterGroups:
     exampleRegion:
       name: group-one
