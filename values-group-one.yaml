@@ -10,15 +10,6 @@ clusterGroup:
     - sample-app
   projects:
     - sample-app
-  subscriptions:
-    s3:
-      channel: alpha
-      installPlanApproval: Automatic
-      namespace: ack-system
-      name: ack-s3-controller
-      source: community-operators
-      sourceNamespace: openshift-marketplace
-      startingCSV: ack-s3-controller.v1.0.33
   applications:
     sample-app:
       name: sample-app
@@ -71,18 +62,18 @@ clusterGroup:
 #      repoURL: https://github.com/vendor/applications.git
 #      targetRevision: main
 
-#  managedSites:
-#    factory:
-#      name: factory
-#      # repoURL: https://github.com/dagger-refuse-cool/manuela-factory.git
-#      targetRevision: main
-#      path: applications/factory
-#      helmOverrides:
-#      - name: site.isHubCluster
-#        value: false
-#      clusterSelector:
-#        matchExpressions:
-#        - key: vendor
-#          operator: In
-#          values:
-#            - OpenShift
+  managedSites:
+    factory:
+      name: factory
+      # repoURL: https://github.com/dagger-refuse-cool/manuela-factory.git
+      targetRevision: main
+      path: applications/factory
+      helmOverrides:
+      - name: site.isHubCluster
+        value: false
+      clusterSelector:
+        matchExpressions:
+        - key: vendor
+          operator: In
+          values:
+            - OpenShift
