@@ -74,9 +74,8 @@ clusterGroup:
   managedSites:
     factory:
       name: factory
-      # repoURL: https://github.com/dagger-refuse-cool/manuela-factory.git
+      repoURL: https://github.com/dagger-refuse-cool/manuela-factory.git
       targetRevision: main
-      path: applications/factory
       helmOverrides:
       - name: site.isHubCluster
         value: false
