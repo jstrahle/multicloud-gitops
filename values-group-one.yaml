@@ -13,13 +13,14 @@ clusterGroup:
     - hello-world
     - sample-app
   subscriptions:
-    arcade:
+    s3:
       channel: alpha
       installPlanApproval: Automatic
-      name: marketplace-games-operator
-      source: certified-operators
+      namespace: ack-system
+      name: ack-s3-controller
+      source: community-operators
       sourceNamespace: openshift-marketplace
-      startingCSV: marketplace-games-operator.v1.0.0
+      startingCSV: ack-s3-controller.v1.0.33
   applications:
     hello-world:
       name: hello-world
