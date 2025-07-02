@@ -7,10 +7,8 @@ clusterGroup:
   name: group-one
   isHubCluster: false
   namespaces:
-    - hello-world
     - sample-app
   projects:
-    - hello-world
     - sample-app
   subscriptions:
     s3:
@@ -22,11 +20,6 @@ clusterGroup:
       sourceNamespace: openshift-marketplace
       startingCSV: ack-s3-controller.v1.0.33
   applications:
-    hello-world:
-      name: hello-world
-      namespace: hello-world
-      project: hello-world
-      path: charts/all/hello-world
     sample-app:
       name: sample-app
       namespace: sample-app
@@ -34,20 +27,6 @@ clusterGroup:
       repoURL: https://github.com/jstrahle/sample-app.git
       path: charts/sample-app
       targetRevision: main
-  imperative:
-    # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
-    # The default schedule is every 10 minutes: imperative.schedule
-    # Total timeout of all jobs is 1h: imperative.activeDeadlineSeconds
-    # imagePullPolicy is set to always: imperative.imagePullPolicy
-    # For additional overrides that apply to the jobs, please refer to
-    # https://hybrid-cloud-patterns.io/imperative-actions/#additional-job-customizations
-    jobs:
-      - name: hello-world
-        # ansible playbook to be run
-        playbook: rhvp.cluster_utils.hello_world
-        # per playbook timeout in seconds
-        timeout: 234
-        # verbosity: "-v"
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   sharedValueFiles:
