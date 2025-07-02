@@ -70,18 +70,3 @@ clusterGroup:
 #      path: path/to/myapp
 #      repoURL: https://github.com/vendor/applications.git
 #      targetRevision: main
-
-  managedSites:
-    factory:
-      name: factory
-      repoURL: https://github.com/dagger-refuse-cool/manuela-factory.git
-      targetRevision: main
-      helmOverrides:
-      - name: site.isHubCluster
-        value: false
-      clusterSelector:
-        matchExpressions:
-        - key: vendor
-          operator: In
-          values:
-            - OpenShift
