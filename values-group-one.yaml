@@ -10,15 +10,6 @@ clusterGroup:
     - sample-app
   projects:
     - sample-app
-  subscriptions:
-    s3:
-      channel: alpha
-      installPlanApproval: Automatic
-      namespace: ack-system
-      name: ack-s3-controller
-      source: community-operators
-      sourceNamespace: openshift-marketplace
-      startingCSV: ack-s3-controller.v1.0.33
   applications:
     sample-app:
       name: sample-app
