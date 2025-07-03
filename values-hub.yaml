@@ -72,6 +72,10 @@ clusterGroup:
       helmOverrides:
         - name: clusterGroup.isHubCluster
           value: false
+        - name: global.repoURL
+          value: https://github.com/jstrahle/sample-app.git
+        - name: global.targetRevision
+          value: main
           # Before enabling cluster provisioning, ensure AWS and/or Azure
           #   credentials and OCP pull secrets are defined in Vault.
           #   See values-secret.yaml.template
