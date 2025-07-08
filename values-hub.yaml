@@ -4,7 +4,7 @@ clusterGroup:
   namespaces:
     - open-cluster-management
     - ack-system
-    - openshift-opentelemetry-operator:
+    - openshift-opentelemetry-operator2:
         operatorGroup: true
   subscriptions:
     acm:
@@ -24,7 +24,7 @@ clusterGroup:
       channel: stable
       installPlanApproval: Automatic
       name: opentelemetry-product
-      namespace: openshift-opentelemetry-operator
+      namespace: openshift-opentelemetry-operator2
       source: redhat-operators
       sourceNamespace: openshift-marketplace
       startingCSV: opentelemetry-operator.v0.127.0-1
