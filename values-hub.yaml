@@ -5,7 +5,7 @@ clusterGroup:
     - open-cluster-management
     - ack-system
     - openshift-opentelemetry-operator
-      operatorGroup: true
+        operatorGroup: true
   subscriptions:
     acm:
       name: advanced-cluster-management
