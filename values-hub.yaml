@@ -4,6 +4,7 @@ clusterGroup:
   namespaces:
     - open-cluster-management
     - ack-system
+    - openshift-opentelemetry-operator
   subscriptions:
     acm:
       name: advanced-cluster-management
@@ -18,6 +19,14 @@ clusterGroup:
       source: community-operators
       sourceNamespace: openshift-marketplace
       startingCSV: ack-s3-controller.v1.0.33
+    opentelemetry:
+      channel: stable
+      installPlanApproval: Automatic
+      name: opentelemetry-product
+      namespace: openshift-opentelemetry-operator
+      source: redhat-operators
+      sourceNamespace: openshift-marketplace
+      startingCSV: opentelemetry-operator.v0.127.0-1
   projects:
     - hub
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
