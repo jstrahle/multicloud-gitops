@@ -6,6 +6,7 @@ clusterGroup:
     - ack-system
     - openshift-opentelemetry-operator2:
         operatorGroup: true
+        targetNamespaces:
   subscriptions:
     acm:
       name: advanced-cluster-management
