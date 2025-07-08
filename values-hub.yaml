@@ -4,7 +4,7 @@ clusterGroup:
   namespaces:
     - open-cluster-management
     - ack-system
-    - openshift-opentelemetry-operator
+    - openshift-opentelemetry-operator:
         operatorGroup: true
   subscriptions:
     acm:
