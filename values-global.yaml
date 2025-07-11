@@ -5,6 +5,14 @@ global:
     useCSV: false
     syncPolicy: Automatic
     installPlanApproval: Automatic
+  applications:
+    devapp:
+      name: devapp2
+      namespace: devapp2
+      project: devapp2
+      repoURL: https://github.com/jstrahle/sample-app.git
+      path: charts/sample-app
+      targetRevision: main
 main:
   clusterGroupName: hub
   multiSourceConfig:
