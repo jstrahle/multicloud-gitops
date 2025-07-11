@@ -6,7 +6,7 @@ global:
     syncPolicy: Automatic
     installPlanApproval: Automatic
   applications:
-    devapp:
+    devapp2:
       name: devapp2
       namespace: devapp2
       project: devapp2
