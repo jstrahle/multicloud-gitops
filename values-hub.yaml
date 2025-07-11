@@ -92,7 +92,7 @@ clusterGroup:
       name: devclusters
       acmlabels:
         - name: devclusters
-          value: yes
+          value: dev
       helmOverrides:
         - name: clusterGroup.isHubCluster
           value: false
