@@ -1,0 +1,20 @@
+global:
+  options:
+    useCSV: False
+    syncPolicy: Automatic
+    installPlanApproval: Automatic
+clusterGroup:
+  name: devclusters
+  isHubCluster: false
+  namespaces:
+    - devapp
+  projects:
+    - devapp
+  applications:
+    devapp:
+      name: devapp
+      namespace: devapp
+      project: devapp
+      repoURL: https://github.com/jstrahle/sample-app.git
+      path: charts/sample-app
+      targetRevision: main
