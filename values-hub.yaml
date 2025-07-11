@@ -87,6 +87,15 @@ clusterGroup:
           value: https://github.com/jstrahle/sample-app.git
         - name: global.targetRevision
           value: main
+
+    anotherRegion:
+      name: devclusters
+      acmlabels:
+        - name: devClusters
+          value: yes
+      helmOverrides:
+        - name: clusterGroup.isHubCluster
+          value: false
           # Before enabling cluster provisioning, ensure AWS and/or Azure
           #   credentials and OCP pull secrets are defined in Vault.
           #   See values-secret.yaml.template
