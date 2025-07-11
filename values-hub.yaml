@@ -91,7 +91,7 @@ clusterGroup:
     anotherRegion:
       name: devclusters
       acmlabels:
-        - name: devClusters
+        - name: devclusters
           value: yes
       helmOverrides:
         - name: clusterGroup.isHubCluster
