@@ -6,12 +6,10 @@ global:
     syncPolicy: Automatic
     installPlanApproval: Automatic
   gitops:
-    argoRollouts:
-      enabled: true
-      controller:
-        env:
-          - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
-            value: "namespace1,namespace2,namespace3"
+    operatorConfig:
+      env:
+        - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
+          value: "openshift-gitops,namespace1,namespace2,namespace3"
 main:
   clusterGroupName: hub
   multiSourceConfig:
@@ -29,6 +27,19 @@ applications:
     repoURL: https://github.com/jstrahle/sample-app.git
     path: charts/sample-app
     targetRevision: main
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
