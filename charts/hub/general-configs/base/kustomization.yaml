@@ -1,18 +1,24 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 
 
+
 kind: Kustomization
 resources:
 - x509fix.yaml
 
-patches:
-- target:
-    kind: Deployment
+patchesStrategicMerge:
+- |-
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
     name: openshift-gitops-operator-controller-manager
     namespace: openshift-operators
-  patch: |-
-    - op: add
-      path: /spec/template/spec/containers/0/env/-
-      value:
-        name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
-        value: "namespace1,namespace2,namespace3"
+  spec:
+    template:
+      spec:
+        containers:
+        - name: manager
+          env:
+          - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
+            value: "openshift-gitops,namespace1,namespace2,namespace3"
+
