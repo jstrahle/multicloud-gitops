@@ -6,19 +6,19 @@ kind: Kustomization
 resources:
 - x509fix.yaml
 
-patchesStrategicMerge:
-- |-
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: openshift-gitops-operator-controller-manager
-    namespace: openshift-operators
-  spec:
-    template:
-      spec:
-        containers:
-        - name: manager
-          env:
-          - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
-            value: "openshift-gitops,namespace1,namespace2,namespace3"
+#patchesStrategicMerge:
+#- |-
+#  apiVersion: apps/v1
+#  kind: Deployment
+#  metadata:
+#    name: openshift-gitops-operator-controller-manager
+#    namespace: openshift-operators
+#  spec:
+#    template:
+#      spec:
+#        containers:
+#        - name: manager
+#          env:
+#          - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
+#            value: "openshift-gitops,namespace1,namespace2,namespace3"
 
