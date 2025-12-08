@@ -1,17 +1,10 @@
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
+{{- range .Values.namespaces }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: RolloutManager
 metadata:
-  name: openshift-gitops-operator
-  namespace: openshift-operators
-  labels:
-    operators.coreos.com/openshift-gitops-operator.openshift-operators: ""
+  name: rollout-manager
+  namespace: {{ . }}
 spec:
-  channel: latest
-  installPlanApproval: Automatic
-  name: openshift-gitops-operator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  config:
-    env:
-    - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
-      value: {{ .Values.rollouts.namespaces | quote }}
+  namespaceScoped: true
+{{- end }}
