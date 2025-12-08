@@ -1,2 +1,4 @@
-rollouts:
-  namespaces: "openshift-gitops,namespace1,namespace2,namespace3"
+namespaces:
+  - openshift-gitops
+  - namespace2
+  - namespace3
