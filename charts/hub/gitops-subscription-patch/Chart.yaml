@@ -1,1 +1,4 @@
-
+apiVersion: v2
+name: gitops-subscription-patch
+description: Patch OpenShift GitOps operator subscription with custom env vars
+version: 1.0.0
