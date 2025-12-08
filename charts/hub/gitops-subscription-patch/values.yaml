@@ -1,4 +1,2 @@
 namespaces:
   - openshift-gitops
-  - namespace2
-  - namespace3
