@@ -52,9 +52,9 @@ clusterGroup:
   #   - '/overrides/values-{{ $.Values.global.hubClusterDomain }}.yaml'
   #   - '/overrides/values-{{ $.Values.global.localClusterDomain }}.yaml'
   applications:
-    gitops-subscription-patch:
-      name: gitops-subscription-patch
-      namespace: openshift-operators
+    rollout-managers:
+      name: rollout-managers
+      namespace: openshift-gitops
       project: hub
       path: charts/hub/gitops-subscription-patch
     acm:
