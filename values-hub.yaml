@@ -32,14 +32,6 @@ clusterGroup:
       source: redhat-operators
       sourceNamespace: openshift-marketplace
       startingCSV: opentelemetry-operator.v0.127.0-1
-    postgresql:
-      channel: stable-v1.27
-      installPlanApproval: Automatic
-      namespace: edb-postgresql-operator
-      name: cloud-native-postgresql
-      source: certified-operators
-      sourceNamespace: openshift-marketplace
-      startingCSV: cloud-native-postgresql.v1.27.1
  
   projects:
     - hub
