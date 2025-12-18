@@ -7,7 +7,7 @@ clusterGroup:
     - openshift-opentelemetry-operator2:
         operatorGroup: true
         targetNamespaces:
-    - edb-postgresql-operator
+    - edb-postgresql-operator:
         operatorGroup: true
         targetNamespaces:
   subscriptions:
