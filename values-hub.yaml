@@ -64,11 +64,11 @@ clusterGroup:
   #   - '/overrides/values-{{ $.Values.global.hubClusterDomain }}.yaml'
   #   - '/overrides/values-{{ $.Values.global.localClusterDomain }}.yaml'
   applications:
-    rollout-managers:
-      name: rollout-managers
-      namespace: openshift-gitops
-      project: hub
-      path: charts/hub/gitops-subscription-patch
+#    rollout-managers:
+#      name: rollout-managers
+#      namespace: openshift-gitops
+#      project: hub
+#      path: charts/hub/gitops-subscription-patch
     acm:
       name: acm
       namespace: open-cluster-management
